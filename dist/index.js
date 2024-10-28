@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.kontrol = kontrol;
+exports.sozcuk = sozcuk;
+exports.icerik = icerik;
 const yirmidokuz = ["gumushane", "29", 29];
 function normalizeString(str) {
     return str
@@ -9,12 +10,22 @@ function normalizeString(str) {
         .replace(/ş/g, 's')
         .replace(/ğ/g, 'g');
 }
-function kontrol(arguman) {
-    if (typeof arguman === 'number') {
+function sozcuk(arguman) {
+    if (typeof arguman === 'string') {
+        return yirmidokuz.includes(normalizeString(arguman));
+    }
+    else if (typeof arguman === 'number') {
         return yirmidokuz.includes(arguman);
     }
-    else {
-        return yirmidokuz.includes(normalizeString(arguman.toLowerCase()));
-    }
+    return false;
 }
 ;
+function icerik(icerik) {
+    const sozcukler = icerik.split(' ');
+    for (const kelime of sozcukler) {
+        if (sozcuk(kelime)) {
+            return true;
+        }
+    }
+    return false;
+}

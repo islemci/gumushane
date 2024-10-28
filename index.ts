@@ -8,11 +8,23 @@ function normalizeString(str: string): string {
         .replace(/ğ/g, 'g');
 }
 
-function kontrol(arguman: any): boolean {
-    if (typeof arguman === 'number') {
+function sozcuk(arguman: any): boolean {
+    if (typeof arguman === 'string') {
+        return yirmidokuz.includes(normalizeString(arguman));
+    } else if (typeof arguman === 'number'){
         return yirmidokuz.includes(arguman);
-    } else {
-    return yirmidokuz.includes(normalizeString(arguman.toLowerCase()));
-}};
+    } 
+   return false;
+};
 
-export { kontrol };
+function icerik(icerik: any): boolean {
+    const sozcukler = icerik.split(' ');
+    for (const kelime of sozcukler) {
+        if (sozcuk(kelime)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+export { sozcuk, icerik };

@@ -1,6 +1,6 @@
 {
   "name": "gumushane",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Herhangi bir argümanın Gümüşhane ile ilgili olup olmadığını anlama.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/islemci/gumushane#readme",
   "devDependencies": {
     "@types/node": "^22.8.1",
+    "jest": "^29.7.0",
     "typescript": "^5.6.3"
   }
 }
