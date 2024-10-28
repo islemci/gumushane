@@ -1,6 +1,6 @@
 {
   "name": "gumushane",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Herhangi bir argümanın Gümüşhane ile ilgili olup olmadığını anlama.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
